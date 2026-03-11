@@ -11,7 +11,6 @@
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       background: linear-gradient(135deg, #1a0a2e 0%, #16213e 50%, #0f3460 100%);
@@ -23,9 +22,7 @@
       padding: 24px 16px 96px;
       line-height: 1.6;
     }
-
     .page-container { width: 100%; max-width: 520px; position: relative; }
-
     .main-card {
       background: linear-gradient(145deg, rgba(26, 10, 46, 0.95), rgba(22, 33, 62, 0.95));
       border-radius: 24px;
@@ -33,9 +30,7 @@
       border: 2px solid rgba(251, 191, 36, 0.4);
       box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(251, 191, 36, 0.15);
     }
-
     .header-section { text-align: center; margin-bottom: 24px; }
-
     .logo-container {
       width: 110px;
       height: 110px;
@@ -45,13 +40,11 @@
       border: 3px solid rgba(251, 191, 36, 0.8);
       box-shadow: 0 0 30px rgba(251, 191, 36, 0.6), 0 0 60px rgba(251, 191, 36, 0.3);
     }
-
     .logo-container img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
-
     .main-title {
       font-size: 28px;
       font-weight: 800;
@@ -63,7 +56,6 @@
       -webkit-text-fill-color: transparent;
       text-shadow: 0 0 30px rgba(251, 191, 36, 0.5);
     }
-
     .subtitle-text { font-size: 14px; color: #e2e8f0; font-weight: 500; }
     .subtitle-highlight { font-weight: 800; font-size: 15px; color: #fbbf24; text-transform: uppercase; text-shadow: 0 0 20px rgba(251, 191, 36, 0.6); }
 
@@ -76,23 +68,11 @@
       border: 2px solid rgba(251, 191, 36, 0.5);
       box-shadow: 0 8px 24px rgba(251, 191, 36, 0.2), inset 0 0 20px rgba(251, 191, 36, 0.1);
     }
-
-    .rate-jodi,
-    .rate-haruff {
-      display: block;
-      font-weight: 700;
-      letter-spacing: 0.4px;
-    }
-
+    .rate-jodi, .rate-haruff { display: block; font-weight: 700; letter-spacing: 0.4px; }
     .rate-jodi { font-size: 16px; color: #34d399; margin-bottom: 8px; }
     .rate-haruff { font-size: 17px; color: #fbbf24; }
 
-    .buttons-section {
-      margin: 24px 0;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
+    .buttons-section { margin: 24px 0; display: flex; flex-direction: column; gap: 12px; }
 
     .action-button {
       display: flex;
@@ -107,7 +87,6 @@
       text-decoration: none;
       cursor: pointer;
       letter-spacing: 0.3px;
-      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
     }
 
     .btn-telegram {
@@ -115,12 +94,6 @@
       color: #fff;
       box-shadow: 0 8px 24px rgba(0, 136, 204, 0.6);
       animation: tg-pulse 1.8s ease-in-out infinite;
-    }
-
-    .btn-telegram:hover {
-      transform: translateY(-2px);
-      background: #0099dd;
-      box-shadow: 0 10px 30px rgba(0, 136, 204, 0.7);
     }
 
     .markets-section { margin: 26px 0; }
@@ -138,7 +111,6 @@
       border-radius: 16px;
       border: 1px solid rgba(251, 191, 36, 0.3);
       overflow: hidden;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
     }
 
     .market-row {
@@ -151,12 +123,10 @@
       border-bottom: 1px solid rgba(251, 191, 36, 0.2);
     }
 
-    .market-row:last-child { border-bottom: none; }
-    .market-row:nth-child(odd) { background: rgba(26, 10, 46, 0.5); }
     .market-time { font-weight: 700; color: #fbbf24; }
 
     .info-section { margin: 22px 0; text-align: center; }
-    .members-info { font-size: 13px; font-weight: 600; color: #fbbf24; margin-bottom: 10px; text-shadow: 0 0 15px rgba(251, 191, 36, 0.5); }
+    .members-info { font-size: 13px; font-weight: 600; color: #fbbf24; margin-bottom: 10px; }
     .payment-info { font-size: 12px; color: #cbd5e1; }
 
     .footer-section {
@@ -167,14 +137,6 @@
       font-size: 11px;
       color: #94a3b8;
     }
-
-    .footer-section a {
-      color: #fbbf24;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .footer-section a:hover { text-decoration: underline; }
 
     .sticky-button-wrapper {
       position: fixed;
@@ -191,7 +153,6 @@
       border-radius: 16px;
       padding: 5px;
       border: 1px solid rgba(251, 191, 36, 0.4);
-      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.7), 0 0 30px rgba(251, 191, 36, 0.15);
     }
 
     .sticky-button {
@@ -206,185 +167,126 @@
       font-size: 14px;
       font-weight: 700;
       text-decoration: none;
-      box-shadow: 0 8px 24px rgba(0, 136, 204, 0.6);
-      letter-spacing: 0.3px;
-      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
-    }
-
-    .sticky-button:hover {
-      transform: translateY(-2px);
-      background: linear-gradient(135deg, #0099dd, #0077bb);
-      box-shadow: 0 10px 30px rgba(0, 136, 204, 0.7);
     }
 
     @keyframes tg-pulse {
-      0%, 100% {
-        transform: translateY(0) scale(1);
-        box-shadow: 0 8px 24px rgba(0, 136, 204, 0.6);
-      }
-      50% {
-        transform: translateY(-2px) scale(1.04);
-        box-shadow: 0 12px 32px rgba(0, 136, 204, 0.9);
-      }
-    }
-
-    @media (max-width: 480px) {
-      body { padding: 20px 12px 96px; }
-      .main-card { padding: 26px 18px 24px; }
-      .main-title { font-size: 24px; }
-      .subtitle-text { font-size: 13px; }
-      .rates-section { margin-top: 20px; }
-      .sticky-button-wrapper { width: calc(100% - 24px); bottom: 18px; }
+      0%,100% { transform: scale(1); }
+      50% { transform: scale(1.04); }
     }
   </style>
 </head>
 
 <body>
-  <div class="page-container">
-    <div class="main-card">
-      <!-- HEADER SECTION -->
-      <div class="header-section">
-        <div class="logo-container">
-          <img src="img/shyambhai.jpeg" alt="Jai Shree Shyam Logo">
-        </div>
-        
-        <h1 class="main-title">Shyam Online Khaiwal</h1>
-        
-        <p class="subtitle-text">
-          खून-पसीने की कमाई लुटाकर दिल से टूट गए हो?<br>
-          हर बार भरोसा किया और बदले में सिर्फ धोखा मिला?<br>
-          हारे का सहारा - <span class="subtitle-highlight">SHYAM KHAIWAL</span>, अभी Join करो।
-        </p>
-      </div>
 
-      <!-- RATES SECTION -->
-      <div class="rates-section">
-        <span class="rate-jodi">🔥 जोड़ी 100 का 10000 RATE🔥</span>
-        <span class="rate-haruff">💎 हरुफ 100 का 1000 RATE 💎</span>
-      </div>
+<div class="page-container">
+<div class="main-card">
 
-      <!-- BUTTONS SECTION -->
-      <div class="buttons-section">
-        <a id="telegram-cta-main"
-           href="https://telegram.me/+-bLnkfQoufpjMDA1"
-           target="_blank"
-           rel="noopener noreferrer"
-           class="action-button btn-telegram">
-          Telegram GROUP अभी जॉइन करें
-        </a>
-      </div>
+<div class="header-section">
+<div class="logo-container">
+<img src="img/shyambhai.jpeg" alt="Jai Shree Shyam Logo">
+</div>
 
-      <!-- MARKETS SECTION -->
-      <div class="markets-section">
-        <div class="markets-heading">
-          मार्केट के आखिरी टाइम तक आराम से खेलो
-        </div>
-        <div class="markets-table">
-          <div class="market-row">
-            <span>दिल्ली बाज़ार</span>
-            <span class="market-time">03:05 PM</span>
-          </div>
-          <div class="market-row">
-            <span>गली</span>
-            <span class="market-time">05:15 PM</span>
-          </div>
-          <div class="market-row">
-            <span>श्री गणेश</span>
-            <span class="market-time">04:40 PM</span>
-          </div>
-          <div class="market-row">
-            <span>फरीदाबाद</span>
-            <span class="market-time">06:05 PM</span>
-          </div>
-          <div class="market-row">
-            <span>गाज़ियाबाद</span>
-            <span class="market-time">09:25 PM</span>
-          </div>
-          <div class="market-row">
-            <span>गली चोर</span>
-            <span class="market-time">11:25 PM</span>
-          </div>
-          <div class="market-row">
-            <span>दिसावर</span>
-            <span class="market-time">04:30 AM</span>
-          </div>
-        </div>
-      </div>
+<h1 class="main-title">Shyam Online Khaiwal</h1>
 
-      <!-- MEMBERS & PAYMENT INFO -->
-      <div class="info-section">
-        <div class="members-info">
-          ✅ इस Group में 10K+ Members ✅
-        </div>
-        <div class="payment-info">
-          हर गेम का payment 20 मिनट में clear – full Secure
-        </div>
-      </div>
+<p class="subtitle-text">
+खून-पसीने की कमाई लुटाकर दिल से टूट गए हो?<br>
+हर बार भरोसा किया और बदले में सिर्फ धोखा मिला?<br>
+हारे का सहारा - <span class="subtitle-highlight">SHYAM KHAIWAL</span>, अभी Join करो।
+</p>
+</div>
 
-      <!-- FOOTER SECTION -->
-      <div class="footer-section">
-        Ads by
-        <a href="https://t.me/ADSPROMEDIABOT" target="_blank" rel="noopener noreferrer">
-          Ads Pro Media Agency
-        </a>
-        <br>
-        © 2008 - 2026 Shyam Online Khaiwal. All rights reserved. 20+ Age Only
-      </div>
-    </div>
-  </div>
+<div class="rates-section">
+<span class="rate-jodi">🔥 जोड़ी 100 का 10000 RATE🔥</span>
+<span class="rate-haruff">💎 हरुफ 100 का 1000 RATE 💎</span>
+</div>
 
-  <!-- STICKY BUTTON -->
-  <div class="sticky-button-wrapper">
-    <div class="sticky-button-box">
-      <a id="telegram-cta-sticky" 
-         href="https://telegram.me/+PIHJOQ7PdMZmZGQ9" 
-         target="_blank" 
-         rel="noopener noreferrer"
-         class="sticky-button">
-        🚀 Telegram GROUP par तुरंत join करें
-      </a>
-    </div>
-  </div>
+<div class="buttons-section">
+<a id="telegram-cta-main"
+href="https://telegram.me/+-bLnkfQoufpjMDA1"
+target="_blank"
+rel="noopener noreferrer"
+class="action-button btn-telegram">
+Telegram GROUP अभी जॉइन करें
+</a>
+</div>
 
-  <script>
-    // Meta Pixel Base Code
-    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
-    (window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+<div class="markets-section">
+<div class="markets-heading">
+मार्केट के आखिरी टाइम तक आराम से खेलो
+</div>
 
-    fbq('init', '1206824131518002');
-    fbq('track', 'PageView');
+<div class="markets-table">
+<div class="market-row"><span>दिल्ली बाज़ार</span><span class="market-time">03:05 PM</span></div>
+<div class="market-row"><span>गली</span><span class="market-time">05:15 PM</span></div>
+<div class="market-row"><span>श्री गणेश</span><span class="market-time">04:40 PM</span></div>
+<div class="market-row"><span>फरीदाबाद</span><span class="market-time">06:05 PM</span></div>
+<div class="market-row"><span>गाज़ियाबाद</span><span class="market-time">09:25 PM</span></div>
+<div class="market-row"><span>गली चोर</span><span class="market-time">11:25 PM</span></div>
+<div class="market-row"><span>दिसावर</span><span class="market-time">04:30 AM</span></div>
+</div>
+</div>
 
-    // 🔐 First Click Tracking System - Subscribe Event with Value
-    function trackFirstClick(eventName, details) {
-      try {
-        if (localStorage.getItem('first_click_tracked') === 'yes') return;
-        localStorage.setItem('first_click_tracked', 'yes');
-      } catch (e) {
-        // storage blocked: still allow first call, but no dedupe next time
-      }
+<div class="info-section">
+<div class="members-info">✅ इस Group में 10K+ Members ✅</div>
+<div class="payment-info">हर गेम का payment 20 मिनट में clear – full Secure</div>
+</div>
 
-      if (typeof fbq === 'function') {
-        fbq('track', eventName, details);
-      }
-    }
+<div class="footer-section">
+Ads by
+<a href="https://t.me/ADSPROMEDIABOT" target="_blank">Ads Pro Media Agency</a>
+<br>
+© 2008 - 2026 Shyam Online Khaiwal. All rights reserved. 20+ Age Only
+</div>
 
-    document.addEventListener('DOMContentLoaded', function () {
-      var tg = document.getElementById('telegram-cta-main');
-      
-      if (tg) {
-        tg.addEventListener('click', function () {
-          trackFirstClick('Subscribe', {
-            value: 1999,
-            currency: 'INR',
-            content_name: 'Telegram Group Join',
-            content_category: 'Matka'
-          });
-        });
-      }
+</div>
+</div>
+
+<div class="sticky-button-wrapper">
+<div class="sticky-button-box">
+<a id="telegram-cta-sticky"
+href="https://telegram.me/+PIHJOQ7PdMZmZGQ9"
+target="_blank"
+rel="noopener noreferrer"
+class="sticky-button">
+🚀 Telegram GROUP par तुरंत join करें
+</a>
+</div>
+</div>
+
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '1206824131518002');
+fbq('track', 'PageView');
+
+function trackFirstClick(eventName, details) {
+  try {
+    if (localStorage.getItem('first_click_tracked') === 'yes') return;
+    localStorage.setItem('first_click_tracked', 'yes');
+  } catch (e) {}
+
+  if (typeof fbq === 'function') {
+    fbq('track', eventName, details);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  var tg = document.getElementById('telegram-cta-main');
+
+  if (tg) {
+    tg.addEventListener('click', function () {
+      trackFirstClick('Lead', {
+        content_name: 'Telegram Group Join',
+        content_category: 'Matka'
+      });
     });
-  </script>
+  }
+});
+</script>
+
 </body>
 </html>
