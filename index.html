@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shyam Online Khaiwal | Premium Service 2008</title>
+  <title>Shyam Online Khaiwal 2008</title>
   <meta name="description" content="Shyam Online Khaiwal - भरोसेमंद ऑनलाइन खाइवाल, fast update, clear rate और secure Telegram व WhatsApp सपोर्ट।">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,11 +40,7 @@
       border: 3px solid rgba(251, 191, 36, 0.8);
       box-shadow: 0 0 30px rgba(251, 191, 36, 0.6), 0 0 60px rgba(251, 191, 36, 0.3);
     }
-    .logo-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+    .logo-container img { width: 100%; height: 100%; object-fit: cover; }
     .main-title {
       font-size: 28px;
       font-weight: 800;
@@ -127,7 +123,6 @@
 
     .info-section { margin: 22px 0; text-align: center; }
     .members-info { font-size: 13px; font-weight: 600; color: #fbbf24; margin-bottom: 10px; }
-    .payment-info { font-size: 12px; color: #cbd5e1; }
 
     .footer-section {
       margin-top: 24px;
@@ -211,9 +206,7 @@ Telegram GROUP अभी जॉइन करें
 </div>
 
 <div class="markets-section">
-<div class="markets-heading">
-मार्केट के आखिरी टाइम तक आराम से खेलो
-</div>
+<div class="markets-heading">मार्केट के आखिरी टाइम तक आराम से खेलो</div>
 
 <div class="markets-table">
 <div class="market-row"><span>दिल्ली बाज़ार</span><span class="market-time">03:05 PM</span></div>
@@ -262,58 +255,68 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
 fbq('init', '874433018317054');
 fbq('track', 'PageView');
 
-function trackFirstClick(eventName, details) {
-  try {
-    if (localStorage.getItem('first_click_tracked') === 'yes') return;
-    localStorage.setItem('first_click_tracked', 'yes');
-  } catch (e) {}
+// Cookie helper functions
+function setCookie(name, value, days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days*24*60*60*1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+}
 
-  if (typeof fbq === 'function') {
-    fbq('track', eventName, details);
-  }
+function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+// Strong first click tracking
+function trackFirstClick(eventName, details) {
+    try {
+        if (localStorage.getItem('first_click_tracked') === 'yes') return;
+        if (getCookie('first_click_tracked') === 'yes') return;
+        localStorage.setItem('first_click_tracked', 'yes');
+        setCookie('first_click_tracked', 'yes', 365); // 1 year
+    } catch(e) {}
+
+    if (typeof fbq === 'function') {
+        fbq('track', eventName, details);
+    }
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  var tg = document.getElementById('telegram-cta-main');
+    var buttons = [
+        document.getElementById('telegram-cta-main'),
+        document.getElementById('telegram-cta-sticky')
+    ];
 
-  if (tg) {
-    tg.addEventListener('click', function () {
-      trackFirstClick('Lead', {
-        content_name: 'Telegram Group Join',
-        content_category: 'Matka'
-      });
+    buttons.forEach(function(btn) {
+        if (btn) {
+            btn.addEventListener('click', function () {
+                trackFirstClick('Lead', {
+                    content_name: 'Telegram Group Join',
+                    content_category: 'Matka'
+                });
+            });
+        }
     });
-  }
 });
 
 /* Disable Right Click */
-document.addEventListener('contextmenu', function(e) {
-  e.preventDefault();
-});
+document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
 
 /* Disable Inspect Shortcuts */
 document.addEventListener('keydown', function(e) {
-
-  if (e.key === "F12") {
-    e.preventDefault();
-  }
-
-  if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i')) {
-    e.preventDefault();
-  }
-
-  if (e.ctrlKey && e.shiftKey && (e.key === 'J' || e.key === 'j')) {
-    e.preventDefault();
-  }
-
-  if (e.ctrlKey && e.shiftKey && (e.key === 'C' || e.key === 'c')) {
-    e.preventDefault();
-  }
-
-  if (e.ctrlKey && (e.key === 'U' || e.key === 'u')) {
-    e.preventDefault();
-  }
-
+  if (e.key === "F12") e.preventDefault();
+  if (e.ctrlKey && e.shiftKey && ['I','i','J','j','C','c'].includes(e.key)) e.preventDefault();
+  if (e.ctrlKey && e.key === 'U') e.preventDefault();
 });
 </script>
 
