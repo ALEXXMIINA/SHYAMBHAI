@@ -838,45 +838,6 @@
       window.addEventListener('load', startCounters);
     }
   </script>
-<script>
-(function() {
-
-  // 1. RIGHT CLICK DISABLE
-  document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-  });
-
-  // 2. KEYBOARD SHORTCUTS BLOCK
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'F12') { e.preventDefault(); triggerBlock(); }
-    if (e.ctrlKey && e.shiftKey && ['I','J','C'].includes(e.key)) { e.preventDefault(); triggerBlock(); }
-    if (e.ctrlKey && ['u','s','a','p'].includes(e.key)) { e.preventDefault(); }
-  });
-
-  // 3. DEVTOOLS SIZE DETECTION (sabse reliable method)
-  function checkDevTools() {
-    var widthDiff  = window.outerWidth  - window.innerWidth;
-    var heightDiff = window.outerHeight - window.innerHeight;
-    if (widthDiff > 160 || heightDiff > 160) {
-      triggerBlock();
-    }
-  }
-  setInterval(checkDevTools, 500);
-
-  // 4. BLUR / REDIRECT — DevTools khulte hi page blur ho jata hai
-  function triggerBlock() {
-    document.body.style.filter = 'blur(20px)';
-    document.body.style.pointerEvents = 'none';
-    // Agar redirect chahiye toh neeche wali line uncomment karo:
-    // window.location.href = 'https://google.com';
-  }
-
-  // 5. USER SELECT DISABLE
-  document.body.style.userSelect = 'none';
-  document.body.style.webkitUserSelect = 'none';
-
-})();
-</script>
   
 </body>
 </html>
